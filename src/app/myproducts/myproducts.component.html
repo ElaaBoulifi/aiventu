@@ -53,22 +53,23 @@
   
     
 
-        <form class="row g-3">
+        <form #f="ngForm" (ngSubmit)="addproduct(f)" >
           <div class="row">
             <div>
               <br>
-              <input type="text" class="form-control" placeholder="Title" placeholder="Title:">
+              <input type="text" class="form-control" placeholder="Title" placeholder="Title:" name="title" #title="ngModel" ngModel>
             </div>
             <div>
             
-              <textarea class="form-control" cols="30" rows="10" placeholder="Description"></textarea>
+              <textarea class="form-control" cols="30" rows="10" placeholder="Description" name="description" #description="ngModel" ngModel></textarea>
             </div>
             <br>
             <div>
-              <input type="text" class="form-control" placeholder="Title" placeholder="Image">
+              <input type="text" class="form-control" placeholder="Title" placeholder="Image" name="image" #image="ngModel" ngModel>
             </div>
             
           </div>
+          <div class="alert alert-success" *ngIf="successMessage">{{successMessage}}</div>
           <br>
             <button class="btn btn-success">Add Product</button>
 

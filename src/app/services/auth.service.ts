@@ -5,8 +5,11 @@ import { AngularFireAuth } from '@angular/fire/auth';
   providedIn: 'root'
 })
 export class AuthService {
+  user: any;
 
-  constructor(private fa: AngularFireAuth) { }
+  constructor(private fa: AngularFireAuth) {
+    this.user=this.fa.user
+   }
 
 
 
