@@ -11,6 +11,8 @@ export class MyproductsComponent implements OnInit {
 Uid: string | undefined
 
   successMessage: string | undefined;
+  
+
   constructor(private fs:AngularFirestore,private as:AuthService) {
     this.as.user.subscribe((user: { uid: string | undefined; })=>{
       this.Uid=user.uid
@@ -18,6 +20,8 @@ Uid: string | undefined
    }
 
   ngOnInit(): void {
+
+  
   }
   addproduct(f: { value: any; }){
     let data=f.value
@@ -33,3 +37,7 @@ this.successMessage='added !'
   }
 
 }
+function a(a: any) {
+  throw new Error('Function not implemented.');
+}
+
